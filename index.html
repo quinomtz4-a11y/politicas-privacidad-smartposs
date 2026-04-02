@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart POS Manager - Politica de Privacidad y Terminos de Uso</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f7fa;
+            color: #1a1a2e;
+            line-height: 1.7;
+        }
+        .header {
+            background: linear-gradient(135deg, #0d47a1, #1565c0, #1976d2);
+            color: white;
+            padding: 48px 24px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2rem; font-weight: 900; margin-bottom: 8px; }
+        .header p { opacity: 0.85; font-size: 1rem; }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .tab-btn {
+            padding: 10px 28px;
+            border: 2px solid rgba(255,255,255,0.4);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .tab-btn.active, .tab-btn:hover {
+            background: white;
+            color: #1565c0;
+            border-color: white;
+        }
+        .container {
+            max-width: 820px;
+            margin: -20px auto 40px;
+            padding: 0 16px;
+        }
+        .content-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 36px;
+            display: none;
+        }
+        .content-card.active { display: block; }
+        .update-badge {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #0d47a1;
+        }
+        .section {
+            margin-bottom: 28px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid #eef2f6;
+        }
+        .section:last-child { border-bottom: none; margin-bottom: 0; }
+        .section h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section h3 .num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background: #e3f2fd;
+            color: #1565c0;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .section p, .section li {
+            color: #4a4a6a;
+            font-size: 0.95rem;
+        }
+        .section ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+        .section li { margin-bottom: 4px; }
+        .highlight-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 12px 0;
+        }
+        .highlight-box.camera {
+            background: #fce4ec;
+            border-left-color: #e91e63;
+        }
+        .highlight-box.safe {
+            background: #e8f5e9;
+            border-left-color: #4caf50;
+        }
+        .highlight-box p {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .footer {
+            text-align: center;
+            padding: 32px 16px;
+            color: #888;
+            font-size: 0.85rem;
+        }
+        .contact-box {
+            background: #f5f7fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 12px;
+        }
+        .contact-box p { margin-bottom: 4px; }
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.5rem; }
+            .content-card { padding: 24px 18px; }
+            .tabs { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Smart POS Manager</h1>
+    <p>Sistema de Punto de Venta Inteligente</p>
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showTab('privacy')">Politica de Privacidad</button>
+        <button class="tab-btn" onclick="showTab('terms')">Terminos de Uso</button>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- ==================== POLITICA DE PRIVACIDAD ==================== -->
+    <div id="privacy" class="content-card active">
+        <span class="update-badge">Ultima actualizacion: 2 de abril de 2025</span>
+        <h2>Politica de Privacidad</h2>
+        <p style="color:#4a4a6a; margin-bottom:28px;">
+            En Smart POS Manager nos comprometemos a proteger su privacidad. Esta politica describe como recopilamos, usamos y protegemos su informacion personal.
+        </p>
+
+        <div class="section">
+            <h3><span class="num">1</span> Informacion que Recopilamos</h3>
+            <p><strong>a) Informacion proporcionada por el usuario:</strong></p>
+            <ul>
+                <li>Nombre completo y datos de contacto (correo electronico, telefono)</li>
+                <li>Nombre del negocio y direccion fiscal</li>
+                <li>Informacion de productos e inventario</li>
+                <li>Datos de ventas y transacciones</li>
+                <li>Informacion de clientes del negocio</li>
+            </ul>
+            <br>
+            <p><strong>b) Informacion recopilada a traves de la camara del dispositivo:</strong></p>
+            <div class="highlight-box camera">
+                <p>IMPORTANTE: La camara se utiliza UNICAMENTE para escanear codigos de barras y codigos QR de productos. NO almacenamos fotografias, NO grabamos video y las imagenes se procesan localmente en el dispositivo sin transmitirse a servidores externos.</p>
+            </div>
+            <br>
+            <p><strong>c) Informacion recopilada automaticamente:</strong></p>
+            <ul>
+                <li>Tipo de dispositivo y sistema operativo</li>
+                <li>Identificadores unicos del dispositivo</li>
+                <li>Datos de uso y rendimiento de la aplicacion</li>
+                <li>Registros de errores (crashes) para mejorar estabilidad</li>
+                <li>Datos analiticos anonimizados sobre uso de funcionalidades</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">2</span> Permisos del Dispositivo</h3>
+            <p>Smart POS Manager solicita los siguientes permisos:</p>
+            <br>
+            <p><strong>CAMARA (android.permission.CAMERA):</strong></p>
+            <div class="highlight-box camera">
+                <p>Proposito: Escanear codigos de barras y codigos QR de productos para identificacion de inventario y proceso de venta.</p>
+            </div>
+            <ul>
+                <li><strong>Uso:</strong> Exclusivamente para identificar productos mediante su codigo de barras durante el proceso de venta o al agregar productos al inventario</li>
+                <li><strong>Almacenamiento:</strong> Las imagenes de la camara se procesan en tiempo real en el dispositivo para decodificar el codigo. NO se almacenan fotografias ni se graba video</li>
+                <li><strong>Transmision:</strong> Las imagenes de la camara NO se transmiten a servidores externos ni a terceros</li>
+                <li><strong>Control:</strong> Puede revocar este permiso en cualquier momento desde Configuracion &gt; Aplicaciones &gt; Smart POS Manager &gt; Permisos</li>
+            </ul>
+            <br>
+            <p><strong>NOTIFICACIONES (android.permission.POST_NOTIFICATIONS):</strong></p>
+            <ul>
+                <li>Proposito: Enviar alertas de stock bajo, recordatorios y avisos importantes del negocio</li>
+                <li>Puede desactivarlas en cualquier momento</li>
+            </ul>
+            <br>
+            <p><strong>VIBRACION (android.permission.VIBRATE):</strong></p>
+            <ul>
+                <li>Proposito: Retroalimentacion haptica al escanear productos exitosamente</li>
+            </ul>
+            <br>
+            <p><strong>INTERNET (android.permission.INTERNET):</strong></p>
+            <ul>
+                <li>Proposito: Sincronizar datos con Firebase, autenticacion de usuario y respaldo en la nube</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">3</span> Uso de la Informacion</h3>
+            <p>Utilizamos su informacion para:</p>
+            <ul>
+                <li>Proporcionar los servicios de punto de venta (POS)</li>
+                <li>Escanear codigos de barras para identificar productos (uso de camara)</li>
+                <li>Gestionar inventario, ventas y reportes de su negocio</li>
+                <li>Generar reportes financieros y analiticos</li>
+                <li>Mejorar la experiencia del usuario y funcionalidades</li>
+                <li>Enviar notificaciones relevantes sobre su negocio</li>
+                <li>Proporcionar soporte tecnico</li>
+                <li>Detectar y prevenir actividades fraudulentas</li>
+                <li>Cumplir con obligaciones legales y fiscales aplicables</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">4</span> Almacenamiento y Seguridad</h3>
+            <p>Su informacion se almacena de manera segura:</p>
+            <ul>
+                <li>Utilizamos Firebase (Google Cloud) como infraestructura principal</li>
+                <li>Los datos se encriptan en transito (TLS/SSL) y en reposo</li>
+                <li>Implementamos autenticacion segura con Firebase Authentication</li>
+                <li>Aplicamos reglas de seguridad en Firestore para controlar acceso</li>
+                <li>Realizamos respaldos periodicos de la informacion</li>
+                <li>Solo personal autorizado tiene acceso a datos sensibles</li>
+            </ul>
+            <div class="highlight-box safe">
+                <p>Aunque tomamos medidas razonables para proteger su informacion, ningun sistema es completamente seguro. Le notificaremos en caso de cualquier brecha de seguridad que afecte sus datos.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">5</span> Compartir Informacion</h3>
+            <div class="highlight-box safe">
+                <p>NO vendemos su informacion personal a terceros.</p>
+            </div>
+            <p>Podemos compartir informacion con:</p>
+            <ul>
+                <li><strong>Google Firebase:</strong> Almacenamiento en la nube y autenticacion</li>
+                <li><strong>Google Analytics:</strong> Datos anonimizados de uso</li>
+                <li><strong>Firebase Crashlytics:</strong> Reportes de errores tecnicos</li>
+                <li><strong>Autoridades fiscales:</strong> Cuando sea requerido por ley</li>
+                <li><strong>Proveedores de servicios:</strong> Bajo acuerdos de confidencialidad</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">6</span> Derechos del Usuario</h3>
+            <p>Usted tiene derecho a:</p>
+            <ul>
+                <li><strong>Acceder:</strong> Solicitar una copia de sus datos personales</li>
+                <li><strong>Rectificar:</strong> Corregir datos inexactos o incompletos</li>
+                <li><strong>Eliminar:</strong> Solicitar la eliminacion de sus datos</li>
+                <li><strong>Portabilidad:</strong> Recibir sus datos en formato estructurado</li>
+                <li><strong>Oposicion:</strong> Oponerse al procesamiento de sus datos</li>
+                <li><strong>Revocar consentimiento:</strong> Retirar su consentimiento en cualquier momento</li>
+            </ul>
+            <p style="margin-top:12px;">Para ejercer estos derechos, contactenos a: <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="166579667964627356657b7764626679657b7778777173643875797b">[email&#160;protected]</a></strong><br>
+            Responderemos a su solicitud en un plazo maximo de 30 dias.</p>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">7</span> Retencion de Datos</h3>
+            <p>Conservamos sus datos durante los siguientes periodos:</p>
+            <ul>
+                <li><strong>Datos de cuenta:</strong> Mientras su cuenta este activa</li>
+                <li><strong>Datos de ventas:</strong> 5 anos (cumplimiento fiscal en Mexico)</li>
+                <li><strong>Datos analiticos:</strong> 26 meses (ciclo de Google Analytics)</li>
+                <li><strong>Reportes de crashes:</strong> 90 dias</li>
+                <li><strong>Datos de sesion:</strong> 30 dias de inactividad</li>
+            </ul>
+            <p style="margin-top:12px;">Al eliminar su cuenta, sus datos personales seran eliminados en un plazo de 30 dias, excepto aquellos requeridos por ley.</p>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">8</span> Menores de Edad</h3>
+            <p>Smart POS Manager no esta disenado para menores de 13 anos. No recopilamos intencionalmente informacion de menores. Si descubrimos que hemos recopilado datos de un menor, los eliminaremos de inmediato.</p>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">9</span> Cambios a esta Politica</h3>
+            <p>Podemos actualizar esta Politica de Privacidad periodicamente. Le notificaremos sobre cambios significativos a traves de:</p>
+            <ul>
+                <li>Notificacion dentro de la aplicacion</li>
+                <li>Correo electronico registrado</li>
+                <li>Aviso en nuestra pagina web</li>
+            </ul>
+            <p style="margin-top:12px;">El uso continuado de la aplicacion despues de los cambios constituye su aceptacion de la politica actualizada.</p>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">10</span> Contacto</h3>
+            <p>Para preguntas sobre esta Politica de Privacidad:</p>
+            <div class="contact-box">
+                <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="196a7669766b6d7c596a74786b6d69766a747877787e7c6b377a7674">[email&#160;protected]</a></p>
+                <p><strong>Aplicacion:</strong> Seccion Configuracion &gt; Soporte</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== TERMINOS DE USO ==================== -->
+    <div id="terms" class="content-card">
+        <span class="update-badge">Ultima actualizacion: 2 de abril de 2025</span>
+        <h2>Terminos de Uso</h2>
+        <p style="color:#4a4a6a; margin-bottom:28px;">
+            Al descargar, instalar o utilizar Smart POS Manager, usted acepta estar sujeto a estos Terminos de Uso.
+        </p>
+
+        <div class="section">
+            <h3><span class="num">1</span> Aceptacion de los Terminos</h3>
+            <p>Al descargar, instalar o utilizar Smart POS Manager ("la Aplicacion"), usted acepta estar sujeto a estos Terminos de Uso. Si no esta de acuerdo con estos terminos, no utilice la Aplicacion.</p>
+            <p style="margin-top:8px;">Estos terminos constituyen un acuerdo legal entre usted y Smart POS Manager. Le recomendamos leerlos detenidamente.</p>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">2</span> Descripcion del Servicio</h3>
+            <p>Smart POS Manager es una aplicacion de Punto de Venta (POS) inteligente que ofrece:</p>
+            <ul>
+                <li>Sistema de punto de venta con gestion de productos</li>
+                <li>Control de inventario en tiempo real</li>
+                <li>Reportes y analiticas de ventas</li>
+                <li>Gestion de clientes y proveedores</li>
+                <li>Facturacion electronica (integracion con terceros)</li>
+                <li>Gestion de multiples sucursales</li>
+                <li>Caja registradora con apertura y cierre de caja</li>
+                <li>Asistente IA para insights de negocio</li>
+                <li>Exportacion de reportes en PDF y CSV</li>
+                <li>Escaner de codigos de barras mediante la camara del dispositivo</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">3</span> Registro y Cuenta de Usuario</h3>
+            <p>Para usar la Aplicacion, usted debe:</p>
+            <ul>
+                <li>Ser mayor de 18 anos o tener autorizacion de un tutor legal</li>
+                <li>Proporcionar informacion veraz y actualizada al registrarse</li>
+                <li>Mantener la confidencialidad de sus credenciales de acceso</li>
+                <li>Notificarnos inmediatamente de cualquier uso no autorizado</li>
+                <li>Ser responsable de todas las actividades bajo su cuenta</li>
+            </ul>
+            <p style="margin-top:8px;">Nos reservamos el derecho de suspender o cancelar cuentas que violen estos terminos o que muestren actividad sospechosa.</p>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">4</span> Uso Aceptable</h3>
+            <p>Usted se compromete a:</p>
+            <ul>
+                <li>Usar la Aplicacion solo para fines legales y comerciales legitimos</li>
+                <li>No intentar acceder a datos de otros usuarios</li>
+                <li>No realizar ingenieria inversa o modificar la Aplicacion</li>
+                <li>No usar la Aplicacion para actividades ilegales o fraudulentas</li>
+                <li>No transmitir virus, malware o codigo danino</li>
+                <li>No sobrecargar intencionalmente nuestros servidores</li>
+                <li>Cumplir con todas las leyes fiscales y comerciales aplicables</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">5</span> Propiedad Intelectual</h3>
+            <p>Todo el contenido de la Aplicacion es propiedad de Smart POS Manager:</p>
+            <ul>
+                <li>Codigo fuente, diseno y arquitectura de software</li>
+                <li>Interfaz de usuario, iconos y elementos visuales</li>
+                <li>Algoritmos de inteligencia artificial y analisis</li>
+                <li>Marca, logotipo y nombres comerciales</li>
+                <li>Documentacion y materiales de soporte</li>
+            </ul>
+            <p style="margin-top:8px;">Se le otorga una licencia limitada, no exclusiva y revocable para usar la Aplicacion conforme a estos terminos.</p>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">6</span> Datos y Contenido del Usuario</h3>
+            <p>Usted conserva la propiedad de sus datos comerciales. Al usar la Aplicacion:</p>
+            <ul>
+                <li>Nos otorga licencia para almacenar y procesar sus datos</li>
+                <li>Es responsable de la precision de la informacion ingresada</li>
+                <li>Debe realizar respaldos periodicos de su informacion critica</li>
+                <li>Acepta que la informacion de ventas se almacene en la nube</li>
+            </ul>
+            <p style="margin-top:8px;">Recomendamos exportar periodicamente sus reportes como respaldo adicional.</p>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">7</span> Limitacion de Responsabilidad</h3>
+            <p>Smart POS Manager se proporciona "tal cual". No garantizamos:</p>
+            <ul>
+                <li>Disponibilidad ininterrumpida del servicio</li>
+                <li>Ausencia total de errores o defectos</li>
+                <li>Que los resultados cumplan sus expectativas especificas</li>
+                <li>Compatibilidad con todos los dispositivos</li>
+            </ul>
+            <p style="margin-top:8px;">En ningun caso seremos responsables por danos indirectos, incidentales, especiales o consecuentes derivados del uso o imposibilidad de uso de la Aplicacion. Nuestra responsabilidad maxima estara limitada al monto pagado por usted en los ultimos 12 meses por el servicio.</p>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">8</span> Planes y Pagos</h3>
+            <p>La Aplicacion ofrece diferentes planes:</p>
+            <ul>
+                <li><strong>Plan Gratuito:</strong> Funcionalidades basicas limitadas</li>
+                <li><strong>Plan Pro:</strong> Funcionalidades avanzadas con suscripcion mensual</li>
+                <li><strong>Plan Enterprise:</strong> Solucion personalizada para grandes negocios</li>
+            </ul>
+            <p style="margin-top:8px;">Los precios pueden cambiar con aviso previo de 30 dias. Las suscripciones se renuevan automaticamente. Puede cancelar en cualquier momento desde la Aplicacion. No se realizan reembolsos por periodos parciales.</p>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">9</span> Terminacion</h3>
+            <p>Podemos suspender o terminar su acceso si:</p>
+            <ul>
+                <li>Viola estos Terminos de Uso</li>
+                <li>No paga las tarifas correspondientes</li>
+                <li>Realiza actividades fraudulentas</li>
+                <li>Su cuenta permanece inactiva por mas de 12 meses</li>
+            </ul>
+            <p style="margin-top:8px;">Al terminar, tendra 30 dias para exportar sus datos. Despues de ese periodo, los datos seran eliminados de acuerdo con nuestra Politica de Privacidad.</p>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">10</span> Ley Aplicable y Jurisdiccion</h3>
+            <p>Estos Terminos se rigen por las leyes de los Estados Unidos Mexicanos.</p>
+            <p style="margin-top:8px;">Para la resolucion de controversias, las partes se someten a la jurisdiccion de los tribunales competentes de la Ciudad de Mexico, Mexico.</p>
+            <p style="margin-top:8px;">Antes de iniciar cualquier procedimiento legal, las partes intentaran resolver disputas de buena fe a traves de mediacion.</p>
+        </div>
+
+        <div class="section">
+            <h3><span class="num">11</span> Contacto</h3>
+            <p>Para consultas sobre estos Terminos de Uso:</p>
+            <div class="contact-box">
+                <p><strong>Email legal:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bad6dfdddbd6fac9d7dbc8cecad5c9d7dbd4dbdddfc894d9d5d7">[email&#160;protected]</a></p>
+                <p><strong>Soporte:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="42312d322d30362702312f233036322d312f232c232527306c212d2f">[email&#160;protected]</a></p>
+                <p><strong>Aplicacion:</strong> Configuracion &gt; Soporte</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>&copy; 2025 Smart POS Manager. Todos los derechos reservados.</p>
+    <p style="margin-top:4px;">Sistema de Punto de Venta Inteligente</p>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    function showTab(tabId) {
+        document.querySelectorAll('.content-card').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        event.target.classList.add('active');
+        window.scrollTo({ top: 200, behavior: 'smooth' });
+    }
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
